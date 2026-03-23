@@ -1,8 +1,22 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('affiche le titre principal', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('TP JSX et Composition')).toBeInTheDocument();
+});
+
+test('affiche la section Demo JSX', () => {
+  render(<App />);
+  expect(screen.getByText('Demo JSX')).toBeInTheDocument();
+});
+
+test('affiche la section HOC', () => {
+  render(<App />);
+  expect(screen.getByText('Higher-Order Component (HOC)')).toBeInTheDocument();
+});
+
+test('affiche la section Render Props', () => {
+  render(<App />);
+  expect(screen.getByText('Render Props')).toBeInTheDocument();
 });
