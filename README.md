@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# TP7 — React : JSX, Composition avancee et Tests
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Objectifs
 
-In the project directory, you can run:
+- Comprendre JSX et sa transformation en JavaScript pur
+- Creer des composants reutilisables avec HOC et Render Props
+- Ecrire des tests unitaires et d'integration avec Jest et Testing Library
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+npm start
+```
 
-### `npm test`
+Pour lancer les tests :
+```bash
+npm test
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="591" height="836" alt="image" src="https://github.com/user-attachments/assets/649ac387-dc9f-45c6-9311-3615186cbff2" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Composants
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### JSXDemo
+Montre la difference entre JSX et React.createElement(). Les deux produisent le meme resultat — JSX est juste plus lisible.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### HOC withLogging
+Higher-Order Component qui enveloppe un composant et affiche ses props dans la console a chaque rendu.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### HOC withTimestamp
+Higher-Order Component qui ajoute la date et l'heure du rendu au-dessus du composant enveloppe.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### DataLoader avec Render Props
+Composant flexible qui passe ses donnees via une fonction render. Le parent decide comment afficher les donnees.
 
-## Learn More
+### FilterLoader avec Render Props
+Composant avec filtre en temps reel. L'utilisateur tape un nom et la liste se filtre automatiquement.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tests
 
-### Code Splitting
+| Fichier | Tests |
+|---|---|
+| Greeting.test.js | Affiche le bon message, affiche le role, cache le role si absent |
+| Counter.test.js | Compteur a 0, incremente, decremente, reset |
+| App.test.js | Titre principal, sections HOC et Render Props |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Resultats : **9 tests passes** 
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Captures d'ecran
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+https://github.com/user-attachments/assets/4ef26202-e2de-4e87-8e25-3a3429afb311
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Console F12 — HOC withLogging
+<img width="1920" height="655" alt="image" src="https://github.com/user-attachments/assets/fa9db9f8-15bf-4949-8f98-2e507185fe7f" />
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
